@@ -6,7 +6,7 @@ services:
     stdin_open: true
     build: 
       context: client
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.client
     ports: 
       - "3000:3000"
     volumes:
@@ -16,7 +16,7 @@ services:
     stdin_open: true
     build: 
       context: server
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.server
     ports: 
       - "3010:3010"
     volumes:
