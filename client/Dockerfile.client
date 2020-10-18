@@ -5,9 +5,11 @@ COPY . .
 WORKDIR /client/UI
 RUN npm install && npm run build
 
-FROM golang:alpine AS main
+FROM golang:alpine
 
 WORKDIR /client
 COPY --from=base /client .
+RUN adduser -D drf
+USER drf
 
 CMD go run main.go
